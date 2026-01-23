@@ -280,3 +280,133 @@ nav a:hover {
     padding: 80px 24px;
   }
 }
+
+.memberships {
+  padding: 90px 60px;
+  background: linear-gradient(180deg, #000, var(--dark-gray));
+}
+
+.memberships-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(0, 0, 0, 0.6)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 50px 30px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
+}
+
+.memberships h2 {
+  text-align: center;
+  font-size: 2.1rem;
+  margin-bottom: 35px;
+  color: var(--white);
+  letter-spacing: 0.3px;
+}
+
+.membership-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(210px, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+.membership-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.membership-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 122, 24, 0.35);
+}
+
+/* Solid-color "image" block (no photos) */
+.membership-img {
+  height: 210px;
+  background: linear-gradient(135deg, #1a1a1a, #2f2f2f);
+  position: relative;
+}
+
+/* Give each tier a distinct but cohesive look */
+.membership-card:nth-child(1) .membership-img {
+  background: linear-gradient(135deg, rgba(255, 122, 24, 0.22), rgba(0,0,0,0.65));
+}
+.membership-card:nth-child(2) .membership-img {
+  background: linear-gradient(135deg, rgba(220, 220, 220, 0.18), rgba(0,0,0,0.65));
+}
+.membership-card:nth-child(3) .membership-img {
+  background: linear-gradient(135deg, rgba(255, 199, 66, 0.18), rgba(0,0,0,0.65));
+}
+.membership-card:nth-child(4) .membership-img {
+  background: linear-gradient(135deg, rgba(140, 204, 255, 0.18), rgba(0,0,0,0.65));
+}
+
+/* subtle shine line */
+.membership-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.0) 0%,
+    rgba(255,255,255,0.10) 35%,
+    rgba(255,255,255,0.0) 70%
+  );
+  transform: translateX(-30%);
+  opacity: 0.35;
+}
+
+.membership-footer {
+  padding: 16px 16px 18px;
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  text-align: center;
+}
+
+.tier {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.membership-btn {
+  width: 170px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 800;
+  background: #1f86ff;
+  color: white;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.membership-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* Responsive like the screenshot */
+@media (max-width: 1100px) {
+  .membership-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .memberships {
+    padding: 70px 18px;
+  }
+  .membership-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
