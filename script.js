@@ -5,3 +5,10 @@ document.querySelectorAll(".service-btn").forEach(btn => {
     else alert("Contact section coming soon!");
   });
 });
+
+document.querySelectorAll(".membership-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const tier = btn.dataset.tier;
+    alert(`${tier} Membership details coming soon!`);
+  });
+});
