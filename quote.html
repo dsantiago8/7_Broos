@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get a Quote | 7 Broo’s Car Detailing</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Simple header (optional: reuse your navbar) -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="index.html#home" aria-label="Back to home">
+        <span class="brand-top">7 Broo's</span>
+        <span class="brand-sub">Car Detailing</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact" class="nav-btn">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="quote-page">
+    <section class="quote-hero">
+      <div class="quote-hero-inner">
+        <div>
+          <h1>Get a Quote</h1>
+          <p class="quote-sub">
+            Tell us a little about your vehicle — we’ll reply quickly with a price and availability.
+          </p>
+        </div>
+
+        <div class="quote-pill" id="selectedServicePill" aria-live="polite">
+          Selected Service: <strong id="selectedServiceText">Not selected</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-form-wrap">
+      <div class="quote-card">
+        <h2 class="quote-card-title">Quote Request</h2>
+
+        <form id="quoteForm" class="quote-form">
+          <div class="two-col">
+            <label>
+              Full Name <span class="req">*</span>
+              <input type="text" name="fullName" placeholder="Your name" required />
+            </label>
+
+            <label>
+              Phone Number <span class="req">*</span>
+              <input type="tel" name="phone" placeholder="(702) 555-1234" required />
+            </label>
+          </div>
+
+          <div class="two-col">
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@email.com" />
+            </label>
+
+            <label>
+              Location / Zip <span class="req">*</span>
+              <input type="text" name="location" placeholder="Las Vegas, 89101" required />
+            </label>
+          </div>
+
+          <div class="two-col">
+            <label>
+              Vehicle Year <span class="req">*</span>
+              <input type="number" name="year" placeholder="2020" min="1980" max="2099" required />
+            </label>
+
+            <label>
+              Vehicle Make/Model <span class="req">*</span>
+              <input type="text" name="vehicle" placeholder="Honda Accord" required />
+            </label>
+          </div>
+
+          <label>
+            Selected Service <span class="req">*</span>
+            <select name="service" id="serviceSelect" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="Exterior Detail">Exterior Detail</option>
+              <option value="Interior Detail">Interior Detail</option>
+              <option value="Full Detail">Full Detail</option>
+            </select>
+          </label>
+
+          <label>
+            Notes (optional)
+            <textarea name="notes" rows="4" placeholder="Stains, pet hair, size of vehicle, etc."></textarea>
+          </label>
+
+          <!-- Hidden field (optional) for logging original choice -->
+          <input type="hidden" name="serviceFromUrl" id="serviceFromUrl" />
+
+          <button type="submit" class="send-btn">Request Quote</button>
+
+          <p class="form-note">
+            By submitting, you agree we may contact you by phone/text.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="quote.js"></script>
+</body>
+</html>

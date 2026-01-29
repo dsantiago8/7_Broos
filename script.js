@@ -16,13 +16,6 @@ function scrollToContact() {
   }
 }
 
-// Get Quote buttons -> Contact
-document.querySelectorAll(".service-btn").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    scrollToContact();
-  });
-});
 
 // Contact Us Now button (hero CTA) -> Contact
 // Works whether it's a <button class="cta"> or <a class="cta" href="#contact">
