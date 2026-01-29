@@ -8,22 +8,32 @@
 </head>
 
 <body>
-  <!-- Simple header (optional: reuse your navbar) -->
-  <header class="navbar">
+ 
+    <!-- NAVBAR -->
+    <header class="navbar">
     <div class="nav-inner">
-      <a class="brand" href="index.html#home" aria-label="Back to home">
+        <a class="brand" href="index.html#home" aria-label="Go to home">
         <span class="brand-top">7 Broo's</span>
         <span class="brand-sub">Car Detailing</span>
-      </a>
+        </a>
 
-      <nav class="nav-links">
+        <button class="hamburger" type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+
+        <nav class="nav-links" id="mobileMenu">
         <a href="index.html#home">Home</a>
         <a href="index.html#about">About Us</a>
         <a href="index.html#services">Services</a>
-        <a href="index.html#contact" class="nav-btn">Contact</a>
-      </nav>
+        <a href="index.html#contact" class="nav-btn">Contact Us</a>
+        </nav>
     </div>
-  </header>
+    </header>
 
   <main class="quote-page">
     <section class="quote-hero">
@@ -110,6 +120,8 @@
     </section>
   </main>
 
-  <script src="quote.js"></script>
+    <script src="quote.js"></script>
+    <script src="script.js" defer></script>
+
 </body>
 </html>
