@@ -53,3 +53,22 @@ if (form) {
     setSelectedService(select?.value || "");
   });
 }
+
+form?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const btn = form.querySelector('button[type="submit"]');
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+  }
+
+  setTimeout(() => {
+    alert("Thanks! We'll reach out ASAP.");
+    form.reset();
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = "Request Quote";
+    }
+  }, 800);
+});
+
