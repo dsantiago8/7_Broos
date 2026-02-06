@@ -1,3 +1,97 @@
+/* --- FLIP CARD STYLES FOR MEMBERSHIPS --- */
+.membership-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 22px;
+  align-items: stretch;
+  justify-items: center;
+}
+
+.flip-card {
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 16px;
+  perspective: 1200px;
+  min-width: 260px;
+  max-width: 320px;
+  width: 100%;
+  height: 370px;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(.2,.6,.2,1);
+}
+
+.flip-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 32px 18px 24px 18px;
+}
+
+.card-front {
+  z-index: 2;
+  background: rgba(255,255,255,0.03);
+  color: #fff;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  z-index: 3;
+  background: rgba(30,30,30,0.98);
+  color: #fff;
+  justify-content: center;
+}
+
+.card-icon {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+/* --- FLIP CARD STYLES FOR MEMBERSHIPS --- */
+/* Price styling for cards */
+.price {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #1f86ff;
+  margin: 8px 0 0 0;
+}
+.membership-card-front {
+  z-index: 2;
+  background: rgba(255,255,255,0.03);
+  color: #fff;
+}
+.membership-card-back {
+  transform: rotateY(180deg);
+  z-index: 3;
+  background: rgba(30,30,30,0.98);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .hero-inner {
   position: relative;
   z-index: 2;
@@ -691,14 +785,7 @@ nav a:hover {
   align-items: start;
 }
 
-.membership-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-  transition: transform 180ms ease, border-color 180ms ease;
-}
+
 
 .membership-card:hover {
   transform: translateY(-4px);
@@ -742,6 +829,10 @@ nav a:hover {
 }
 
 .membership-footer {
+  color: #fff;
+  background: none;
+  font-weight: 800;
+  border-radius: 10px;
   padding: 16px 16px 18px;
   display: grid;
   gap: 10px;

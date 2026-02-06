@@ -27,11 +27,19 @@ document.querySelectorAll(".cta, .nav-btn").forEach((btn) => {
   });
 });
 
-// Membership buttons -> placeholder alert
-document.querySelectorAll(".membership-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const tier = btn.dataset.tier || "Membership";
-    alert(`${tier} details coming soon!`);
+
+// Membership flip cards (new structure)
+document.querySelectorAll('.flip-card .flip-btn').forEach((btn) => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const card = btn.closest('.flip-card');
+    if (!card) return;
+    const action = btn.dataset.action;
+    if (action === 'flip') {
+      card.classList.add('flipped');
+    } else if (action === 'unflip') {
+      card.classList.remove('flipped');
+    }
   });
 });
 
