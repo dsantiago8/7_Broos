@@ -38,37 +38,5 @@ if (select) {
   });
 }
 
-// Demo submit handler (static sites)
-const form = document.getElementById("quoteForm");
-if (form) {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
 
-    const data = new FormData(form);
-    const service = data.get("service");
-    alert(`Thanks! We received your request for: ${service}. We'll reach out ASAP.`);
-
-    form.reset();
-    // Keep the selected service visible after reset
-    setSelectedService(select?.value || "");
-  });
-}
-
-form?.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const btn = form.querySelector('button[type="submit"]');
-  if (btn) {
-    btn.disabled = true;
-    btn.textContent = "Sending...";
-  }
-
-  setTimeout(() => {
-    alert("Thanks! We'll reach out ASAP.");
-    form.reset();
-    if (btn) {
-      btn.disabled = false;
-      btn.textContent = "Request Quote";
-    }
-  }, 800);
-});
 
