@@ -290,23 +290,23 @@
             <div class="contact-card">
                 <form class="contact-form" id="contactForm" action="https://formspree.io/f/xnjbvbkd" method="POST">
                 <label>
-                    Full Name <span class="req">*</span>
+                    <legend>Name <span class="req">*</span></legend>
                     <input type="text" name="fullName" placeholder="Full Name" required />
                 </label>
 
                 <label>
-                    Phone Number <span class="req">*</span>
+                    <legend>Phone Number <span class="req">*</span></legend>
                     <input type="tel" name="Phone" placeholder="Phone Number" required />
                 </label>
 
                 <label>
-                    Email
-                    <input type="email" name="email" placeholder="Email" />
+                    <legend>Email <span class="req">*</span></legend>              
+                    <input type="email" name="email" placeholder="Email" required />
                 </label>
 
                 <label>
-                    Address <span class="req">*</span>
-                    <input type="text" name="address" placeholder="Address" required />
+                    Address
+                    <input type="text" name="address" placeholder="Address" />
                 </label>
 
                 <label>
@@ -317,30 +317,28 @@
                 <fieldset class="service-type">
                     <legend>Service Type <span class="req">*</span></legend>
 
-                    <label class="radio">
-                    <span>Basic package</span>
-                    <input type="radio" name="serviceType" value="Basic package" required />
-                    </label>
-
-                    <label class="radio">
-                    <span>Silver package</span>
-                    <input type="radio" name="serviceType" value="Silver package" />
-                    </label>
-
-                    <label class="radio">
-                    <span>Gold package</span>
-                    <input type="radio" name="serviceType" value="Gold package" />
-                    </label>
-
-                    <label class="radio">
-                    <span>Polish package</span>    
-                    <input type="radio" name="serviceType" value="Polish package" />
-                    </label>
-
-                    <label class="radio">
-                    <span>Platinum Full Detailing</span>
-                    <input type="radio" name="serviceType" value="Platinum Full Detailing" />
-                    </label>
+                    <div class="flex-col">
+                        <div class="option-radio" style="display: flex; align-items: center; margin-bottom: 8px; justify-content: flex-start;">
+                            <input id="service-basic" type="radio" name="serviceType" value="Basic package" required />
+                            <label for="service-basic" style="margin-left: 10px; margin-bottom: 0px; font-weight: normal; text-align: left;">Basic package</label>
+                        </div>
+                        <div class="option-radio" style="display: flex; align-items: center; margin-bottom: 8px; justify-content: flex-start;">
+                            <input id="service-silver" type="radio" name="serviceType" value="Silver package" />
+                            <label for="service-silver" style="margin-left: 10px; margin-bottom: 0px; font-weight: normal; text-align: left;">Silver package</label>
+                        </div>
+                        <div class="option-radio" style="display: flex; align-items: center; margin-bottom: 8px; justify-content: flex-start;">
+                            <input id="service-gold" type="radio" name="serviceType" value="Gold Package" />
+                            <label for="service-gold" style="margin-left: 10px; margin-bottom: 0px; font-weight: normal; text-align: left;">Gold Package</label>
+                        </div>
+                        <div class="option-radio" style="display: flex; align-items: center; margin-bottom: 8px; justify-content: flex-start;">
+                            <input id="service-polish" type="radio" name="serviceType" value="Polish Package" />
+                            <label for="service-polish" style="margin-left: 10px; margin-bottom: 0px; font-weight: normal; text-align: left;">Polish Package</label>
+                        </div>
+                        <div class="option-radio" style="display: flex; align-items: center; margin-bottom: 8px; justify-content: flex-start;">
+                            <input id="service-platinum" type="radio" name="serviceType" value="Platinum Full Detailing" />
+                            <label for="service-platinum" style="margin-left: 10px; margin-bottom: 0px; font-weight: normal; text-align: left;">Platinium Full Detailing</label>
+                        </div>
+                    </div>
                 </fieldset>
 
                 <button class="send-btn" type="submit">Send</button>
