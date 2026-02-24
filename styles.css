@@ -754,10 +754,17 @@ body {
 
 .service-top {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 14px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.card-face.card-front .service-top h3 {
+  align-self: flex-start;
+  margin-top: 0;
+  margin-bottom: 0.5em;
 }
 
 .service-card h3 {
@@ -1068,7 +1075,7 @@ body {
 /* Make service cards longer for better fit */
 .flip-card.service-card {
   min-height: 480px;
-  height: 600px;
+  height: 550px;
 }
 /* QUOTE PAGE */
 .quote-page {
