@@ -366,6 +366,50 @@ body {
     border-radius: 3px;
     transition: transform 200ms ease, opacity 200ms ease;
   }
+
+  /* Hamburger → X when menu is open */
+  .navbar.open .hamburger span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .navbar.open .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar.open .hamburger span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* Hide nav links by default on mobile */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 12px 28px 20px;
+    gap: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 9998;
+  }
+
+  /* Show nav links when menu is open */
+  .navbar.open .nav-links {
+    display: flex;
+  }
+
+  /* Style individual links for mobile */
+  .nav-links a {
+    padding: 12px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 1rem;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+    margin-top: 6px;
+  }
 }
 .nav-btn:hover {
   background: var(--orange-glow);
