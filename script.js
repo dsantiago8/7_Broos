@@ -62,12 +62,21 @@ if (heroBgSection && heroBgFrames.length > 0) {
     heroBgFrames.forEach((img, i) => {
       img.classList.toggle('active', i === idx);
     });
-    // Show/hide right logo, but do not animate end logo on scroll
-    if (heroSideLogo) heroSideLogo.style.display = (idx === heroBgFrames.length - 1) ? 'none' : '';
     if (heroEndLogo && !endLogoAnimated) {
       heroEndLogo.style.display = 'none';
       heroEndLogo.classList.remove('animated');
     }
+  }
+
+  // Hide the side logo only when the hero section scrolls off screen
+  if (heroSideLogo) {
+    const logoObserver = new IntersectionObserver(
+      (entries) => {
+        heroSideLogo.style.display = entries[0].isIntersecting ? '' : 'none';
+      },
+      { threshold: 0 }
+    );
+    logoObserver.observe(heroBgSection);
   }
 
   if (animateLogoBtn && heroEndLogo) {
