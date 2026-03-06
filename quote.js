@@ -6,7 +6,7 @@ const pillText = document.getElementById("selectedServiceText");
 const select = document.getElementById("serviceSelect");
 const hidden = document.getElementById("serviceFromUrl");
 
-const allowed = ["Exterior Detail", "Interior Detail", "Full Detail"];
+const allowed = ["Premium Deep Detail", "Interior Detail", "Full Detail"];
 
 function setSelectedService(service) {
   const safeService = allowed.includes(service) ? service : "";

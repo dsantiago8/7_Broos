@@ -1180,6 +1180,32 @@ body {
   min-height: 480px;
   height: 550px;
 }
+/* Premium Deep Detail card */
+.premium-deep-card {
+  height: auto;
+  min-height: unset;
+}
+
+.premium-deep-card .premium-subtitle {
+  color: var(--muted);
+  font-size: 0.95em;
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+.premium-deep-card .premium-section-title {
+  color: var(--orange);
+  font-size: 1em;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  margin: 10px 0 4px 0;
+  width: 100%;
+}
+
+.premium-deep-card ul {
+  margin-top: 0;
+}
+
 /* QUOTE PAGE */
 .quote-page {
   min-height: 100vh;
