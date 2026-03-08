@@ -1,12 +1,12 @@
 // quote.js
 const params = new URLSearchParams(window.location.search);
-const serviceFromUrl = params.get("service"); // e.g. "Full Detail"
+const serviceFromUrl = params.get("service"); // e.g. "Paint Enhancement"
 
 const pillText = document.getElementById("selectedServiceText");
 const select = document.getElementById("serviceSelect");
 const hidden = document.getElementById("serviceFromUrl");
 
-const allowed = ["Exterior Detail", "Interior Detail", "Full Detail"];
+const allowed = ["Exterior Detail", "Interior Detail", "Paint Enhancement"];
 
 function setSelectedService(service) {
   const safeService = allowed.includes(service) ? service : "";
