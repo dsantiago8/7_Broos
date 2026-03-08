@@ -158,7 +158,7 @@
   z-index: 2;
 }
 .hero-side-logo img {
-  width: min(360px, 40vw);
+  width: min(460px, 44vw);
   height: auto;
   object-fit: contain;
 }
@@ -592,7 +592,7 @@ body {
   }
 
   .hero-side-logo img {
-    width: min(200px, 55vw);
+    width: min(300px, 74vw);
   }
 }
 
@@ -602,7 +602,7 @@ body {
   }
 
   .hero-side-logo img {
-    width: min(160px, 50vw);
+    width: min(260px, 76vw);
   }
 }
 
