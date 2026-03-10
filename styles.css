@@ -158,7 +158,7 @@
   z-index: 2;
 }
 .hero-side-logo img {
-  width: min(360px, 40vw);
+  width: min(460px, 44vw);
   height: auto;
   object-fit: contain;
 }
@@ -568,6 +568,10 @@ body {
 
 /* Responsive: stack logo under text on smaller screens */
 @media (max-width: 900px) {
+  .hero {
+    padding: 0 24px;
+  }
+
   .hero-inner {
     grid-template-columns: 1fr;
     text-align: left;
@@ -580,6 +584,25 @@ body {
 
   .hero-logo img {
     width: min(260px, 70vw);
+  }
+
+  .hero-side-logo {
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .hero-side-logo img {
+    width: min(300px, 74vw);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 0 16px;
+  }
+
+  .hero-side-logo img {
+    width: min(260px, 76vw);
   }
 }
 
