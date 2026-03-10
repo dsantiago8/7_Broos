@@ -293,16 +293,21 @@ body {
 
 .service-btn {
   width: 100%;
-  padding: 12px 14px;
-  background: rgba(255, 122, 24, 0.12);
-  color: var(--orange);
-  border: 1px solid rgba(255, 122, 24, 0.35);
-  font-weight: 800;
-  border-radius: 10px;
+  padding: 14px 32px;
+  background: linear-gradient(90deg, #ff9800 0%, #ff5722 100%);
+  color: #fff;
+  font-weight: 900;
+  border-radius: 12px;
+  box-shadow: 0 0 24px 6px rgba(255, 140, 0, 0.35);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  letter-spacing: 1px;
+  border: none;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
 }
 .service-btn:hover {
-  background: rgba(255, 122, 24, 0.2);
-  transform: translateY(-1px);
+  background: linear-gradient(90deg, #ffb300 0%, #ff7043 100%);
+  box-shadow: 0 0 32px 8px rgba(255, 140, 0, 0.45);
+  transform: scale(1.05);
 }
 
 .membership-btn {
@@ -601,8 +606,25 @@ body {
     padding: 0 16px;
   }
 
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  .hero-side-logo {
+    margin-top: 24px;
+    margin-bottom: 0;
+    align-items: flex-start;
+    justify-content: center;
+    display: flex;
+  }
   .hero-side-logo img {
-    width: min(260px, 76vw);
+    width: min(220px, 76vw);
+    margin-top: -16px;
+    margin-bottom: 0;
+    display: block;
+  }
+  .hero-content .service-btn {
+    margin-bottom: 0;
   }
 }
 
