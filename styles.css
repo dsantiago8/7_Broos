@@ -851,28 +851,31 @@ body {
 }
 
 .service-card {
-  background: linear-gradient(180deg, var(--steel), #171717);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 14px;
-  padding: 26px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-  transition: transform 180ms ease, border-color 180ms ease;
+  background: linear-gradient(160deg, #252525 0%, #1e1e1e 55%, #141414 100%);
+  border: 1px solid rgba(255, 122, 24, 0.15);
+  border-top: 3px solid var(--orange);
+  border-radius: 16px;
+  padding: 0;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 28px rgba(255,122,24,0.07);
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
   overflow: visible;
   position: relative;
 }
 
 .service-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 122, 24, 0.35);
+  transform: translateY(-6px);
+  border-color: rgba(255, 122, 24, 0.45);
+  box-shadow: 0 28px 60px rgba(0,0,0,0.6), 0 0 38px rgba(255,122,24,0.13);
 }
 
 .service-top {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
   width: 100%;
   margin-bottom: 10px;
+  gap: 8px;
 }
 
 .card-face.card-front .service-top h3 {
@@ -1239,9 +1242,14 @@ body {
 .flip-card.service-card {
   height: auto;
   min-height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .flip-card.service-card .card-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   height: auto;
 }
 
@@ -1252,6 +1260,13 @@ body {
   left: auto;
   height: auto;
   overflow: visible;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 22px 20px 18px;
 }
 
 /* Back face overlays the same area as the front face */
@@ -1261,12 +1276,68 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: visible;
+  overflow: auto;
+  background: linear-gradient(160deg, #252525 0%, #1e1e1e 55%, #141414 100%);
+  box-shadow: none;
+  padding: 24px 20px 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-/* Remove overflow from service card faces */
+/* Remove inner card appearance for service card faces */
 .flip-card.service-card .card-face {
   overflow: visible;
+  background: none;
+  box-shadow: none;
+}
+
+/* Push "Learn More" (and the Get a Quote below it) to the card bottom */
+.flip-card.service-card .card-face.card-front .flip-btn {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+}
+
+/* "Back" button on the pricing face: full-width and anchored to bottom */
+.flip-card.service-card .card-face.card-back .flip-btn {
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Orange checkmarks on service list items */
+.flip-card.service-card .card-face.card-front li {
+  padding: 5px 0 5px 1.6em;
+  font-size: 0.95em;
+  position: relative;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  color: var(--muted);
+}
+.flip-card.service-card .card-face.card-front li:first-child {
+  border-top: none;
+}
+.flip-card.service-card .card-face.card-front li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-weight: 800;
+  font-size: 0.9em;
+  top: 0.35em;
+  line-height: 1;
+}
+
+/* Section sub-labels: Exterior / Interior */
+.service-section-label {
+  color: var(--orange);
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-weight: 800;
+  margin-top: 14px;
+  margin-bottom: 2px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255, 122, 24, 0.25);
 }
 /* QUOTE PAGE */
 .quote-page {
