@@ -159,3 +159,33 @@ if (hamburger && navbar && menu) {
     if (window.innerWidth > 760) closeMenu();
   });
 }
+
+// ---------- Equalize service card heights on mobile ----------
+function equalizeServiceCardHeights() {
+  const cards = document.querySelectorAll('.flip-card.service-card');
+  if (!cards.length) return;
+
+  // Reset heights to natural content size first
+  cards.forEach(card => {
+    card.style.height = '';
+  });
+
+  // On mobile (single-column layout), make all cards the same height as the tallest
+  if (window.innerWidth <= 980) {
+    let maxHeight = 0;
+    cards.forEach(card => {
+      const h = card.offsetHeight;
+      if (h > maxHeight) maxHeight = h;
+    });
+    cards.forEach(card => {
+      card.style.height = maxHeight + 'px';
+    });
+  }
+}
+
+let _equalizeTimer;
+window.addEventListener('load', equalizeServiceCardHeights);
+window.addEventListener('resize', () => {
+  clearTimeout(_equalizeTimer);
+  _equalizeTimer = setTimeout(equalizeServiceCardHeights, 150);
+});
