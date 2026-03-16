@@ -17,11 +17,19 @@ function scrollToContact() {
 }
 
 
-// Contact Us Now button (hero CTA) -> Contact
-// Works whether it's a <button class="cta"> or <a class="cta" href="#contact">
-document.querySelectorAll(".cta, .nav-btn").forEach((btn) => {
+
+// Contact Us Now button in hero section scrolls to contact section
+const heroContactBtn = document.querySelector('.hero-content .service-btn');
+if (heroContactBtn) {
+  heroContactBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    scrollToContact();
+  });
+}
+
+// Keep nav-btn smooth scroll behavior
+document.querySelectorAll(".nav-btn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    // If it's an anchor to #contact, prevent the hard jump
     if (btn.tagName === "A") e.preventDefault();
     scrollToContact();
   });
