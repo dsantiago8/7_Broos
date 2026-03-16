@@ -1006,6 +1006,45 @@ body {
   align-items: start;
 }
 
+.membership-grid--single {
+  grid-template-columns: minmax(260px, 380px);
+  justify-content: center;
+}
+
+.membership-grid--single .flip-card {
+  height: 420px;
+  max-width: 380px;
+}
+
+.membership-grid--single .card-front {
+  justify-content: center;
+  text-align: center;
+}
+
+.membership-grid--single .card-front ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+  text-align: left;
+}
+
+.membership-grid--single .card-front ul li::before {
+  content: "• ";
+  color: var(--orange);
+}
+
+.membership-grid--single .card-back {
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.membership-grid--single .card-back p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 12px 0;
+  color: #ccc;
+}
+
 
 
 .membership-card:hover {
