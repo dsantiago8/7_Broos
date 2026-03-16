@@ -58,9 +58,18 @@ if (heroBgSection && heroBgFrames.length > 0) {
   const heroSideLogo = document.querySelector('.hero-side-logo');
   const animateLogoBtn = document.getElementById('animateLogoBtn');
   let endLogoAnimated = false;
+  let scrollRAF = null;
   function showHeroFrame(idx) {
     heroBgFrames.forEach((img, i) => {
-      img.classList.toggle('active', i === idx);
+      if (i === idx) {
+        img.classList.remove('outgoing');
+        img.classList.add('active');
+      } else if (img.classList.contains('active')) {
+        img.classList.remove('active');
+        img.classList.add('outgoing');
+      } else {
+        img.classList.remove('active', 'outgoing');
+      }
     });
     if (heroEndLogo && !endLogoAnimated) {
       heroEndLogo.style.display = 'none';
@@ -104,7 +113,13 @@ if (heroBgSection && heroBgFrames.length > 0) {
     showHeroFrame(idx);
   }
 
-  window.addEventListener('scroll', updateHeroFrameByScroll);
+  window.addEventListener('scroll', () => {
+    if (scrollRAF) return;
+    scrollRAF = requestAnimationFrame(() => {
+      updateHeroFrameByScroll();
+      scrollRAF = null;
+    });
+  });
   window.addEventListener('resize', updateHeroFrameByScroll);
   // Initial state
   updateHeroFrameByScroll();
