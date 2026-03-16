@@ -1570,8 +1570,7 @@ body {
 }
 
 .quote-form label {
-  display: grid;
-  gap: 8px;
+  display: block;
   color: rgba(255,255,255,0.9);
   font-weight: 600;
 }
@@ -1579,6 +1578,9 @@ body {
 .quote-form input,
 .quote-form textarea,
 .quote-form select {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
   padding: 12px 12px;
   border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.14);
