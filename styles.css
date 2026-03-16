@@ -124,7 +124,7 @@
 .price {
   font-size: 1.1em;
   font-weight: bold;
-  color: #1f86ff;
+  color: var(--orange);
   margin: 8px 0 0 0;
 }
 .membership-card-front {
@@ -991,11 +991,17 @@ body {
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
 }
 
+.memberships .container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
 .memberships h2 {
   text-align: center;
-  font-size: 2.1rem;
-  margin-bottom: 35px;
-  color: var(--white);
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 40px;
+  color: var(--orange);
   letter-spacing: 0.3px;
 }
 
@@ -1007,25 +1013,50 @@ body {
 }
 
 .membership-grid--single {
-  grid-template-columns: minmax(260px, 380px);
+  grid-template-columns: minmax(300px, 560px);
   justify-content: center;
 }
 
 .membership-grid--single .flip-card {
-  height: 420px;
-  max-width: 380px;
+  height: 440px;
+  max-width: 560px;
 }
 
 .membership-grid--single .card-front {
   justify-content: center;
   text-align: center;
+  background: linear-gradient(160deg, #252525 0%, #1e1e1e 55%, #141414 100%);
+  border: 1px solid rgba(255, 122, 24, 0.15);
+  border-top: 3px solid var(--orange);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 28px rgba(255,122,24,0.07);
+}
+
+.membership-grid--single .card-front h3 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 18px;
+  letter-spacing: 0.03em;
 }
 
 .membership-grid--single .card-front ul {
   list-style: none;
   padding: 0;
-  margin: 12px 0;
+  margin: 0 0 4px;
   text-align: left;
+  width: 100%;
+}
+
+.membership-grid--single .card-front ul li {
+  padding: 9px 0;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.membership-grid--single .card-front ul li:first-child {
+  border-top: 0;
+  padding-top: 0;
 }
 
 .membership-grid--single .card-front ul li::before {
@@ -1033,14 +1064,32 @@ body {
   color: var(--orange);
 }
 
+.membership-grid--single .price {
+  font-size: 1.45rem;
+  font-weight: 900;
+  margin: 16px 0 14px;
+}
+
 .membership-grid--single .card-back {
   text-align: center;
-  padding: 32px 24px;
+  padding: 32px 28px;
+  background: linear-gradient(160deg, #252525 0%, #1e1e1e 55%, #141414 100%);
+  border: 1px solid rgba(255, 122, 24, 0.15);
+  border-top: 3px solid var(--orange);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 28px rgba(255,122,24,0.07);
+}
+
+.membership-grid--single .card-back h3 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 14px;
+  letter-spacing: 0.03em;
 }
 
 .membership-grid--single .card-back p {
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.65;
   margin: 12px 0;
   color: #ccc;
 }
@@ -1121,6 +1170,13 @@ body {
   }
   .membership-grid {
     grid-template-columns: 1fr;
+  }
+  .membership-grid--single {
+    grid-template-columns: 1fr;
+  }
+  .membership-grid--single .flip-card {
+    max-width: 100%;
+    height: 460px;
   }
 }
 
