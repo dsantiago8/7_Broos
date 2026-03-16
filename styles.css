@@ -1,3 +1,14 @@
+/* Supercar image for membership card */
+.membership-supercar-img {
+  width: 82%;
+  max-width: 230px;
+  aspect-ratio: 4/3;
+  border-radius: 16px;
+  margin: 14px auto 18px auto;
+  object-fit: cover;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+  display: block;
+}
 .option-radio input[type="radio"] {
   width: auto;
   min-width: unset;
@@ -89,8 +100,7 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: visible;
   backface-visibility: hidden;
   border-radius: 16px;
   box-shadow: 0 18px 40px rgba(0,0,0,0.45);
@@ -1012,7 +1022,7 @@ body {
 }
 
 .membership-grid--single .flip-card {
-  height: 420px;
+  height: 480px;
   max-width: 380px;
 }
 
