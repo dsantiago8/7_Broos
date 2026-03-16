@@ -820,7 +820,9 @@ body {
   border: 2px solid #ff7a18;
   transition: background 0.18s, color 0.18s, transform 0.18s;
   width: 100%;
-  text-align: left;
+  text-align: center;
+  text-decoration: none !important;
+  display: inline-block;
 }
 .service-card .service-btn:hover {
   background: #ff7a18;
