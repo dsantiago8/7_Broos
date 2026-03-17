@@ -6,7 +6,15 @@ const pillText = document.getElementById("selectedServiceText");
 const select = document.getElementById("serviceSelect");
 const hidden = document.getElementById("serviceFromUrl");
 
-const allowed = ["Exterior Detail", "Interior Detail", "Paint Enhancement"];
+const allowed = [
+  "Essential Clean Detail",
+  "Machine Wax",
+  "Premium Deep Detail",
+  "Paint Enhancement",
+  "1 Step Paint Correction",
+  "2 Step Paint Correction",
+  "Add-Ons"
+];
 
 function setSelectedService(service) {
   const safeService = allowed.includes(service) ? service : "";
